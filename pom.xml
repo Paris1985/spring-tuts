@@ -9,7 +9,10 @@
 		<module>mongodb</module>
 		<module>shared</module>
 		<module>spring-service</module>
-	</modules>
+        <module>jdbc</module>
+        <module>datasource</module>
+        <module>hibernate</module>
+    </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

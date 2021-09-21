@@ -11,41 +11,28 @@ import java.util.List;
 
 @Service
 public class UserService {
+
     @Autowired
-    private UserRepository userRepository;
+    private IUserService userRepository;
 
     public List<User> getUsers(String nameRegex) {
         return userRepository.findByNameStartingWith(nameRegex);
     }
 
     public User getUser(String id)  {
-        return userRepository.findById(id).orElse(null);
+        return userRepository.findById(id);
     }
 
     public User createUser(User user) throws FoundUserException {
-        User foundUser = userRepository.findById(user.getId()).orElse(null);
-        if (foundUser != null)
-            throw new FoundUserException("User " + foundUser.getId() + " already in the system");
-        else
-            return userRepository.insert(user);
+       return userRepository.insert(user);
     }
 
     public User updateUser(User user) throws UserNotFoundException {
-        User foundUser = userRepository.findById(user.getId()).orElse(null);
-        if (foundUser != null)
-            return userRepository.save(user);
-        else
-            throw new UserNotFoundException("Not Found User " + user.getId());
+      return userRepository.save(user);
     }
 
 
     public User removeUser(String id) throws UserNotFoundException {
-        User user = userRepository.findById(id).orElse(null);
-        if (user != null) {
-            userRepository.delete(user);
-        }else {
-            throw new UserNotFoundException("Not Found User " + user.getId());
-        }
-        return user;
+       return userRepository.delete(id);
     }
 }

@@ -13,7 +13,8 @@ public class SimpleMongoConfig {
 
     @Bean
     public MongoClient mongo() {
-        ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017/users");
+        //ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017/users");
+        ConnectionString connectionString = new ConnectionString("mongodb+srv://oklaters:8ZN1qJwjGg9MBfey@cluster0.cc6tf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
         MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
                 .build();
@@ -23,6 +24,6 @@ public class SimpleMongoConfig {
 
     @Bean
     public MongoTemplate mongoTemplate() throws Exception {
-        return new MongoTemplate(mongo(), "users");
+        return new MongoTemplate(mongo(), "user");
     }
 }
