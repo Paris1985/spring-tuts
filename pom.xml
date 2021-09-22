@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-stack</module>
+        <module>spring-stack-ref</module>
         <module>spring-rest</module>
 		<module>mongodb</module>
 		<module>shared</module>
@@ -79,14 +79,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
