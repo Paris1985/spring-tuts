@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-stack</module>
+        <module>spring-stack-ref</module>
         <module>spring-rest</module>
 		<module>mongodb</module>
 		<module>shared</module>
